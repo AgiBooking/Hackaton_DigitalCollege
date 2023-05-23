@@ -1,13 +1,17 @@
+import React from 'react';
 import './App.css';
 
-function App() {
+import Salas from './pages/salas';
+
+
+export default function App() {
   return (
     <>
     <div>
-      <h1>Hey You</h1>
+      <Salas/>
     </div>
     </>
   );
 }
 
-export default App;
+
