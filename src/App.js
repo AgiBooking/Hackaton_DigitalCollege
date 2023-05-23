@@ -4,7 +4,7 @@ import PermanentDrawerLeft from './components/Drawer';
 function App() {
   return (
     <>
-      <PermanentDrawerLeft/>
+        <PermanentDrawerLeft/>
     </>
   );
 }
