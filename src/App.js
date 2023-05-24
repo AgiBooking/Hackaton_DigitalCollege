@@ -6,6 +6,7 @@ import Eventos from './pages/Eventos';
 import Salas from './pages/Salas';
 import Usuarios from './pages/Usuarios';
 import Login from './pages/Login';
+import Menu from './components/Menu'
 
 const authRoutes = [
   {
@@ -30,10 +31,10 @@ const authRoutes = [
 const ResponsivePage = ({element}) => (
   <>
     <ResponsiveDrawer />
+    <Menu/>
     {element}
   </>
 )
-
 
 function App() {
   return (
