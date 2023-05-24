@@ -76,7 +76,6 @@ const ResponsivePage = ({element}) => (
   </>
 )
 
-import TabelaSalas from './components/TabelaSalas';
 
 function App() {
   return (
