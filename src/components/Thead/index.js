@@ -1,16 +1,16 @@
+
 export default function Thead(){
     return(
-        <div>
-            <thead>
+        <>
+           <thead>
                 <tr>
-                    <th></th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Data-Criação</th>
-                    <th>Ações</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Foto</th>
+                <th>Ações</th>
                 </tr>
             </thead>
-        </div>
+        </>
     )
 }

@@ -1,11 +1,97 @@
+<<<<<<< Updated upstream
 import './App.css';
-import Table from "./pages/Table"
+import ResponsiveDrawer from './components/Drawer';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Dashboard from './pages/Dashboard';
+import Eventos from './pages/Eventos';
+import Salas from './pages/Salas';
+import Usuarios from './pages/Usuarios';
+import Login from './pages/Login';
+=======
 
+import Table from "./pages/Table"
+>>>>>>> Stashed changes
+
+const authRoutes = [
+  {
+    path: '/eventos',
+    element: <Eventos />
+  },
+  {
+    path: '/salas',
+    element: <Salas />
+  },
+  {
+    path: '/usuarios',
+    element: <Usuarios />
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />
+  }
+
+]
+
+const ResponsivePage = ({element}) => (
+  <>
+    <ResponsiveDrawer />
+    {element}
+  </>
+)
+
+import TabelaSalas from './components/TabelaSalas';
+
+import ResponsiveDrawer from './components/Drawer';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Dashboard from './pages/Dashboard';
+import Eventos from './pages/Eventos';
+import Salas from './pages/Salas';
+import Usuarios from './pages/Usuarios';
+import Login from './pages/Login';
+
+const authRoutes = [
+  {
+    path: '/eventos',
+    element: <Eventos />
+  },
+  {
+    path: '/salas',
+    element: <Salas />
+  },
+  {
+    path: '/usuarios',
+    element: <Usuarios />
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />
+  }
+
+]
+
+const ResponsivePage = ({element}) => (
+  <>
+    <ResponsiveDrawer />
+    {element}
+  </>
+)
+
+import TabelaSalas from './components/TabelaSalas';
 
 function App() {
   return (
     <>
     <Table/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Login/>} />
+          {
+            authRoutes.map((route, index) =>
+              <Route key={index} path={route.path} element={<ResponsivePage element={route.element}/>} />
+            )
+          }
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
