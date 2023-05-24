@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import "./style.css";
 
@@ -10,5 +11,14 @@ export default function Dashboard() {
           <Cards />
         </div>
       </>
+=======
+import './index.css';
+
+export default function Dashboard() {
+    return (
+        <>
+            Dashboard
+        </>
+>>>>>>> 73e1c97e7aa72e7c308814bf2953799b9068fa9a
     )
 }

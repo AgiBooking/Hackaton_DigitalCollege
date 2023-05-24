@@ -1,7 +1,7 @@
 import React from 'react';
 import "./style.css";
 
-import Calendario from './calendar-icon-.png';
+import Calendario from '../../img/calendar-icon-.png';
 
 export default function Cards() 
 {

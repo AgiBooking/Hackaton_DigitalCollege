@@ -7,63 +7,48 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* body {
-    background-color: rgba(255, 255, 255, 0.7);
-    background-image: linear-gradient(45deg, #1C75BC, #FFA500 );
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-} */
-
 .box-cards {
+    border: 1px solid blue;
     display: flex;
+    justify-content: space-between;
     gap: 0.6rem;
-    flex-wrap: wrap;
-    margin-right: 1.25rem;
-    margin-top: 1.25rem;
+    margin-right: 1.87rem;
+    margin-left: 1.87rem;
+    margin-top: 1.87rem;
 }
 
 .box-card {
-    /* border: 1px solid red; */
     border: none;
-    width: 16.25rem;
+    width: 100%;
     height: 8.75rem;
     border-radius: 0.5rem;
-    /* background-color: #1C75BC; */
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.4);
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 1.25rem;
+    border: 1px solid black;
 }
 
 .box-card .box-lado-a {
-    /* border: 1px solid blue; */
-    width: 8.43rem;
+    width: 7.1rem;
     height: 6.25rem;
-
     display: flex;
     flex-direction: column;
     justify-content:space-between;
 }
 
 .box-card .box-lado-a h5 {
-    /* color: white; */
     color:#1C75BC;
     font-size: 0.75rem; 
     font-weight: 500;
-    /* color: brown; */
 }
 
 .box-card .box-lado-a .numero {
     font-size: 1.25rem;
     font-weight: 500;
-    color: #FFA500;
+    color: #f05558;
 }
 
 .box-card .box-lado-a .data {
@@ -71,10 +56,8 @@
 }
 
 .box-card .box-lado-b {
-    /* border: 1px solid black; */
-    width: 4.06rem;
+    width: 2.5rem;
     height: 6.25rem;
-    /* margin-left: 80px; */
     display: flex;
     flex-direction: column;
     align-items: end;

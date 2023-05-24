@@ -7,11 +7,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.background-dashboard {
+.background-login {
     background-image: linear-gradient(45deg, #1C75BC, #FFA500 );
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
-    justify-content: end;
-    align-items: start; 
+    justify-content: center;
+    align-items: center; 
 }
