@@ -1,5 +1,5 @@
 import './App.css';
-import PermanentDrawerLeft from './components/Drawer';
+import ResponsiveDrawer from './components/Drawer';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Eventos from './pages/Eventos';
 import Salas from './pages/Salas';
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <PermanentDrawerLeft/>
+        <ResponsiveDrawer/>
         <Routes>
           <Route path='/eventos' element={<Eventos/>} />
           <Route path="/salas" element={<Salas/>}/>
