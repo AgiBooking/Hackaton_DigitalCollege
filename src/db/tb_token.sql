@@ -1,7 +1,0 @@
-CREATE TABLE tokens (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  user_id INT,
-  token VARCHAR(255),
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES users(id)
-);
