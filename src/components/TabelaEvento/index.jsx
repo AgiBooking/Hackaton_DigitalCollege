@@ -1,13 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Modal from '@mui/material/Modal';
+import CriarEvento from '../../components/CriarEvento';
 import './index.css'
 
 export default function TabelaEvento(){
+    const [open, setOpen]= useState(false);
+
+    const handleClose = () => {
+        setOpen(false)
+    };
+
+    const handleOpen = () => {
+        setOpen(true)
+    };
+
     return (
         <>
+        <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description">
+        <CriarEvento/>
+        </Modal>
         <div className="box-table">
                 <div className="box-header">
                     <h1>EVENTOS</h1>
-                    <button className="btn1">Criar Evento</button>
+                    <button onClick={handleOpen} className="btn1">Criar Evento</button>
                 </div>
         
                 <table className="table">
