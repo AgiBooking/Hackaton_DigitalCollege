@@ -63,7 +63,7 @@ export default function TabelaUsuarios(){
     //Salva edição
     const SalvarEdição = async () => {
         try {
-            const resposta = await fetch(`http://localhost:8000/usuario/${editarUsuario.id}`, {
+            const resposta = await fetch(`http://localhost:8000/usuarios/${editarUsuario.id}`, {
                 method: 'PUT',
                 headers: {
                 'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ export default function TabelaUsuarios(){
     return (
 <<<<<<< HEAD
         <>
-        <div className="box-table">
+        < div className="box-table">
             <div className="box-header">
                 <h1>USUÁRIOS</h1>
                 <button onClick={AdicionaUsuario} className="btn1">CADASTRAR</button>
