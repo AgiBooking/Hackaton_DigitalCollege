@@ -18,6 +18,8 @@
     
     .card form {
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
   
 .card label {
@@ -40,4 +42,5 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 8px;
 }
