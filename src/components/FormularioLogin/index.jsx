@@ -1,6 +1,8 @@
 import React from 'react';
 import "./style.css";
 
+
+import Logo from './logo-agibooking.png';
 import Logo from '../../img/logo colorida.png'
 
 export default function FormularioLogin() 

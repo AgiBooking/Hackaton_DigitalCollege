@@ -8,7 +8,7 @@
 }
 
 .background-login {
-    background-image: linear-gradient(45deg, #1C75BC, #FFA500 );
+    background-image: linear-gradient(#f7a072, #eddea4, #0fa3b1);
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
