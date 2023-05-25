@@ -1,7 +1,7 @@
 import React from 'react';
 import "./style.css";
-
 import Person from './person.png'
+import { Link } from 'react-router-dom';
 
 export default function Menu() 
 {
@@ -11,7 +11,8 @@ export default function Menu()
                 <div>
                     <img src={Person} alt="" />
                 </div>
-                <button>Sair</button>
+
+                <Link to="/"><button>Sair</button></Link>
             </div>
         </>
     )
