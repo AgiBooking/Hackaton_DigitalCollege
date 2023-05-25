@@ -1,4 +1,3 @@
-import './App.css';
 import ResponsiveDrawer from './components/Drawer';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Dashboard from './pages/Dashboard';
