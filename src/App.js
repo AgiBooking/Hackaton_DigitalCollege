@@ -28,12 +28,12 @@ const authRoutes = [
 ]
 
 const ResponsivePage = ({element}) => (
-  <>
-    <ResponsiveDrawer />
-    <Menu/>
+  <ResponsiveDrawer profileMenu={<Menu />}>
     {element}
-  </>
+  </ResponsiveDrawer>
 )
+
+import Cards from './components/Cards';
 
 function App() {
   return (

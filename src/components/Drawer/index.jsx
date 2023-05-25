@@ -19,7 +19,7 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PersonIcon from '@mui/icons-material/Person';
 import { Link } from '@mui/material';
 import './index.css';
-import logo from '../../img/logo colorida.png'
+import logo from '../../img/logo_colorida-horizontal.png'
 
 const drawerWidth = 240;
 
@@ -47,7 +47,7 @@ const Bottoes_navegacao = [
 ];
 
 function ResponsiveDrawer(props) {
-  const { window } = props;
+  const { window, profileMenu, children } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -100,7 +100,7 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          {/* Infos da navbar */}
+          {profileMenu}
         </Toolbar>
       </AppBar>
       <Box
@@ -136,9 +136,9 @@ function ResponsiveDrawer(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, marginTop: '72px' }}
       >
-        <Toolbar />
+        {children}
       </Box>
     </Box>
   );
