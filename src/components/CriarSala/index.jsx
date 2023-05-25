@@ -13,11 +13,11 @@ export default function CriarSala() {
                 <label for="nome">Nome da Sala</label>
                 <input type="text" id="nome" name="nome" required/>
 
-                <label for="dataInicio">Capacidade máxima:</label>
-                <input type="datetime-local" id="dataInicio" name="dataInicio" value={start} onChange={(e) => setStart(e.target.value)} max={end} required/>
+                <label for="capacidade">Capacidade máxima:</label>
+                <input type="capacidade" id="capacidade_sala" name="capacidade" value={start} onChange={(e) => setStart(e.target.value)} max={end} required/>
 
-                <label for="dataTermino">Recursos:</label>
-                <input type="datetime-local" id="dataTermino" name="dataTermino" value={end} onChange={(e) => setEnd(e.target.value)} min={start} required/>
+                <label for="recursos">Recursos:</label>
+                <input type="recursos" id="recursos" name="recursos" value={end} onChange={(e) => setEnd(e.target.value)} min={start} required/>
 
                  <input type="submit" value="Criar Salas" />
             </form>
