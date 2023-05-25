@@ -1,2 +1,0 @@
-CREATE DATABASE api_agi_booking
-USE api_agi_booking
