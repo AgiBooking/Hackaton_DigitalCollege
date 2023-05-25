@@ -5,6 +5,13 @@ export default function TabelaSalas()
 {
     return (
         <>
+         <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description">
+        <CriarSalas/>
+        </Modal>
             <div className="box-table">
                 <div className="box-header">
                     <h1>SALAS</h1>
