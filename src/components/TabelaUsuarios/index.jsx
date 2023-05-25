@@ -129,8 +129,10 @@ export default function TabelaUsuarios(){
 
     return (
         <>
-        <h1>USUÁRIOS</h1>
-        <button onClick={AdicionaUsuario}className="btn1">CADASTRAR</button>
+        <div className="box-header">
+            <h1>USUÁRIOS</h1>
+            <button onClick={AdicionaUsuario}className="btn1">Criar usuário</button>
+        </div>
 
         <table className="table">
             <thead>
