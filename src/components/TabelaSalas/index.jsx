@@ -1,21 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Modal from '@mui/material/Modal';
+import CriarSala from '../CriarSala';
 import "./style.css";
 
 export default function TabelaSalas() 
 {
+    const [open, setOpen]= useState(false);
+
+    const handleClose = () => {
+        setOpen(false)
+    };
+
+    const handleOpen = () => {
+        setOpen(true)
+    };
     return (
         <>
-         <Modal
+        <div className="box-table">
+        <Modal
             open={open}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description">
-        <CriarSalas/>
+        <CriarSala/>
         </Modal>
-            <div className="box-table">
+            
                 <div className="box-header">
                     <h1>SALAS</h1>
-                    <button className="btn1">Criar Sala</button>
+                    <button onClick={handleOpen} className="btn1">Criar Sala</button>
                 </div>
         
                 <table className="table">
