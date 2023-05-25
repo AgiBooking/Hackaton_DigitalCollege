@@ -34,6 +34,8 @@ const ResponsivePage = ({element}) => (
   </ResponsiveDrawer>
 )
 
+import Cards from './components/Cards';
+
 function App() {
   return (
     <>
