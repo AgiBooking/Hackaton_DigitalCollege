@@ -25,7 +25,7 @@ export default function TabelaUsuarios(){
     //Busca a lista de usuarios 
     const BuscarUsuarios = async () => {
     try {
-        const resposta = await fetch('http://localhost:8000/usuarios');
+        const resposta = await fetch('http://localhost:8000/usuario');
         const dados = await resposta.json();
         setUsuarios(dados);
         } catch (error) {
@@ -37,7 +37,7 @@ export default function TabelaUsuarios(){
     //Adiciona o usuário
     const AdicionaUsuario = async () => {
         try {
-            const resposta = await fetch('http://localhost:8000/usuarios', {
+            const resposta = await fetch('http://localhost:8000/usuario', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ export default function TabelaUsuarios(){
     //Salva edição
     const SalvarEdição = async () => {
         try {
-            const resposta = await fetch(`http://localhost:8000/usuarios/${editarUsuario.id}`, {
+            const resposta = await fetch(`http://localhost:8000/usuario/${editarUsuario.id}`, {
                 method: 'PUT',
                 headers: {
                 'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ export default function TabelaUsuarios(){
     const DeletarUsuario = async (id) => {
         try {
             // Fazer a requisição para excluir o usuário
-        await fetch(`http://localhost:8000/usuarios/${id}`, {
+        await fetch(`http://localhost:8000/usuario/${id}`, {
         method: 'DELETE',
         });
         
