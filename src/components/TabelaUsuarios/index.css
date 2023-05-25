@@ -16,13 +16,13 @@ body {
   
   th, td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
     color: #264653;
   }
   
   th {
-    background-color: #e76f51;
-    color: white;
+    background-image: linear-gradient(#f88040, #f7cc22, #eddea4);
+    color: #264653;
   }
   
   tr:nth-child(even) {
@@ -40,7 +40,7 @@ body {
     }
   
     .btn2 {
-      background-color: #e9c46a;
+      background-color: #fab507;
       color: white;
       border: none;
       border-radius: 4px;

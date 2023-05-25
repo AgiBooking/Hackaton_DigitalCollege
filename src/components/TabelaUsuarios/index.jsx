@@ -7,13 +7,14 @@ export default function TabelaUsuarios(){
      const [usuarios, setUsuarios] = useState([]);
      const [editarId, setEditarId] = useState(null);
      const [editarUsuario, setEditarUsuario] = useState({});
-     const [imagem, setImagem] = useState('');
+     const [imagem, setImagem] = useState('https://png.pngtree.com/element_origin_min_pic/00/00/06/12575cb97a22f0f.jpg');
      const [novoUsuario, setNovoUsuario] = useState({
         id:'',
         nome: '',
         email: '',
         telefone: '',
-        foto: ''
+        foto:'',
+        datac: ''
         });
 
         useEffect(() => {
@@ -45,7 +46,7 @@ export default function TabelaUsuarios(){
             });
             const dados = await resposta.json();
             setUsuarios([...usuarios, dados]);
-            setNovoUsuario({id:'', nome: '', email: '', telefone: '', foto: '' });
+            setNovoUsuario({id:'', nome: '', email: '', telefone: '', foto: '', datac: '' });
             } catch (error) {
             console.log(error);
             }
@@ -138,8 +139,7 @@ export default function TabelaUsuarios(){
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
-                    <th>Foto</th>
-                    <th>dados-Criação</th>
+                    <th>Data Criação</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -147,6 +147,12 @@ export default function TabelaUsuarios(){
             <tbody>
                 {usuarios.map((user) => (
                     <tr key={user.id}>
+                    <td>
+                        <label className="picture">
+                            {imagem && <img className="fotoUsuario" src={imagem} alt={user.nome}/>}
+                            <input className="inputFoto" type="file" accept="image/*" onChange={MudarFoto}/>
+                        </label>
+                    </td>
                     <td>
                         {editarId === user.id ? (
                         <input
@@ -184,10 +190,16 @@ export default function TabelaUsuarios(){
                         )}
                     </td>
                     <td>
-                    <label className="picture">
-                        {imagem && <img className="fotoUsuario" src={imagem} alt={user.nome}/>}
-                        <input className="inputFoto" type="file" accept="image/*" onChange={MudarFoto}/>
-                    </label>
+                        {editarId === user.id ? (
+                        <input
+                            type="text"
+                            name="datac"
+                            value={editarUsuario.datac || ''}
+                            onChange={MudarInput}
+                        />
+                        ) : (
+                        user.datac
+                        )}
                     </td>
                         <td>
                             {editarId === user.id ? (
