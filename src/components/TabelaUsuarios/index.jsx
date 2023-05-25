@@ -33,7 +33,7 @@ export default function TabelaUsuarios(){
     };
 
 
-    //Adiciona o usuario
+    //Adiciona o usuário
     const AdicionaUsuario = async () => {
         try {
             const resposta = await fetch('http://localhost:8000/usuarios', {
