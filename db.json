@@ -24,5 +24,28 @@
       "foto": "",
       "datac": "24/05/23"
     }
+  ],
+  "salas": [
+    {
+      "id": 1,
+      "sala": "Maia",
+      "capacidade": "30",
+      "recursos": "Tv, Projetor, Notebook",
+      "foto": "https://cdn-icons-png.flaticon.com/512/1647/1647571.png"
+    },
+    {
+      "id": 2,
+      "sala": "Maia",
+      "capacidade": "30",
+      "recursos": "Tv, Projetor, Notebook",
+      "foto": "https://cdn-icons-png.flaticon.com/512/1647/1647571.png"
+    },
+    {
+      "id": 3,
+      "sala": "Maia",
+      "capacidade": "30",
+      "recursos": "Tv, Projetor, Notebook",
+      "foto": "https://cdn-icons-png.flaticon.com/512/1647/1647571.png"
+    }
   ]
 }
