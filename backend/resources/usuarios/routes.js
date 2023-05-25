@@ -28,7 +28,7 @@ app.post('/usuario', async (req, res) => {
 
     let sql = await database.execute(`
     INSERT INTO tb_usuario (nome, sobrenome, email, senha, telefone, img_id, empresa_id)
-    VALUES ('${req.body.nome}', '${req.body.sobrenome}','${req.body.email}','${req.body.telefone}','${req.body.img_id}','${req.body.empresa_id}');
+    VALUES ('${req.body.nome}', '${''}','${req.body.email}','${"12345678"}', '${req.body.telefone}','${1}','${1}');
     `);
     
     dados.id = sql.insertId;

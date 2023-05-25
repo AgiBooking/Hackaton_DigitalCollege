@@ -2,11 +2,11 @@ const mysql2 = require('mysql2/promise');
 
 async function execute(sql) {
     let conexao = await mysql2.createConnection({
-        host: 'sql213.epizy.com',
+        host: '162.216.16.125',
         port: '3306',
-        user: 'epiz_34264402',
-        password: 'JOYgXsxenM',
-        database: 'epiz_34264402_api_agi_booking'
+        user: 'agibooking',
+        password: 'strongpassword',
+        database: 'agibooking'
     });
 
     //executa lá no mysql
