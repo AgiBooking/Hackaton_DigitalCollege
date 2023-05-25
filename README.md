@@ -29,8 +29,6 @@
 ## Descrição do projeto :page_with_curl: 
 
 <p align="justify">
-  Projeto desenvolvido na Hackathon do Programa de Formação Season 4 da FCamara. A aplicação é uma plataforma de estudos que contribui na formação de profissionais, a Orange Evolution. Onde alunos cadastrados tem acesso a conteúdos gratuitos de uma forma intuitiva e personalizável. 
-  
   Projeto desenvolvido na Hackathon do Digital College. Esta documentação descreve a aplicação desenvolvida para a organização e reserva de eventos, salas usadas por usuários cadastrados na plataforma. Aqui você encontrará informações sobre a estrutura do projeto, os requisitos, instruções de instalação e uso, bem como outras informações relevantes.
 </p>
 
