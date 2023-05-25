@@ -39,6 +39,7 @@
     outline: none;
 }
 
+
 input::placeholder {
     color:#1C75BC;
     font-size: 0.8rem;
