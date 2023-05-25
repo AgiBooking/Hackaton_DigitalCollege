@@ -1,7 +1,9 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import './index.css';
 
 export default function CriarEvento() {
+    const [start, setStart] = useState('')
+    const [end, setEnd] = useState('')
     return (
     <>
         <div className="card">
@@ -11,17 +13,11 @@ export default function CriarEvento() {
                 <label for="nome">Nome do Evento:</label>
                 <input type="text" id="nome" name="nome" required/>
 
-                <label for="dataInicio">Data de Início:</label>
-                <input type="date" id="data" name="data" required/>
+                <label for="dataInicio">Início:</label>
+                <input type="datetime-local" id="dataInicio" name="dataInicio" value={start} onChange={(e) => setStart(e.target.value)} max={end} required/>
 
-                <label for="horarioInicio">Horário de início:</label>
-                <input type="time" id="horarioInicio" name="horarioInicio" required/>
-
-                <label for="dataTermino">Data de Termino:</label>
-                <input type="date" id="dataTermino" name="dataTermino" required/>
-
-                <label for="horarioFinal">Horário de término:</label>
-                <input type="time" id="horarioFinal" name="horarioFinal" required/>
+                <label for="dataTermino">Término:</label>
+                <input type="datetime-local" id="dataTermino" name="dataTermino" value={end} onChange={(e) => setEnd(e.target.value)} min={start} required/>
 
                 <label for="sala">Sala:</label>
                 <input type="text" id="sala" name="sala" required/>
@@ -32,3 +28,5 @@ export default function CriarEvento() {
     </>
     );
 }
+
+

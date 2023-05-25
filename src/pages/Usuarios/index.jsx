@@ -1,9 +1,9 @@
-import './index.css';
+import TabelaUsuarios from '../../components/TabelaUsuarios'
 
 export default function Usuarios() {
-    return (
-        <>
-            Usuarios
-        </>
-    )
+  return(
+    <>
+      <TabelaUsuarios/>
+    </>
+  )
 }
