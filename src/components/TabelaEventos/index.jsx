@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Modal from '@mui/material/Modal';
-import CriarEvento from '../../components/CriarEvento';
+import CriarEvento from '../CriarEvento';
 import './index.css'
 
 export default function TabelaEvento(){

@@ -29,8 +29,8 @@
     {
       "id": 1,
       "sala": "Maia",
-      "capacidade": "30",
-      "recursos": "Tv, Projetor, Notebook",
+      "capacidade": "50",
+      "recursos": "Tv, Projetor, Notebook, AR-condicionado",
       "foto": "https://cdn-icons-png.flaticon.com/512/1647/1647571.png"
     },
     {
@@ -43,9 +43,31 @@
     {
       "id": 3,
       "sala": "Maia",
-      "capacidade": "30",
+      "capacidade": "40",
       "recursos": "Tv, Projetor, Notebook",
       "foto": "https://cdn-icons-png.flaticon.com/512/1647/1647571.png"
+    }
+  ],
+  "evento": [
+    {
+      "id": 1,
+      "nomeEvento": "Debora",
+      "dtHoraInicial": "15:00",
+      "dtHoraFinal": "17:00",
+      "sala": "Maia"
+    },
+    {"id": 1,
+    "nomeEvento": "Debora",
+    "dtHoraInicial": "15:00",
+    "dtHoraFinal": "17:00",
+    "sala": "Maia"
+    },
+    {
+      "id": 1,
+      "nomeEvento": "Debora",
+      "dtHoraInicial": "15:00",
+      "dtHoraFinal": "17:00",
+      "sala": "Maia"
     }
   ]
 }

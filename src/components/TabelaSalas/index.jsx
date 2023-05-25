@@ -11,7 +11,7 @@ export default function TabelaSalas(){
        id:'',
        sala: '',
        capacidade: '',
-       recurso: '',
+       recursos: '',
        foto:'',
        });
 
@@ -44,7 +44,7 @@ export default function TabelaSalas(){
            });
            const dados = await resposta.json();
            setSalas([...salas, dados]);
-           setNovaSala({id:'', sala: '', capacidade: '', recurso: '', foto: ''});
+           setNovaSala({id:'', sala: '', capacidade: '', recursos: '', foto: ''});
            } catch (error) {
            console.log(error);
            }
@@ -171,7 +171,7 @@ export default function TabelaSalas(){
                            onChange={MudarInput}
                        />
                        ) : (
-                       user.email
+                       user.capacidade
                        )}
                    </td>
                    <td>
@@ -183,7 +183,7 @@ export default function TabelaSalas(){
                            onChange={MudarInput}
                        />
                        ) : (
-                       user.telefone
+                       user.recursos
                        )}
                    </td>
                        <td>
