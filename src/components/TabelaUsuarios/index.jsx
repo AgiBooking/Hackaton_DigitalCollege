@@ -4,115 +4,132 @@ import './index.css';
 
 export default function TabelaUsuarios(){
 
-     const [users, setUsers] = useState([]);
-     const [editingUserId, setEditingUserId] = useState(null);
-     const [editedUser, setEditedUser] = useState({});
-     const [newUser, setNewUser] = useState({
+     const [usuarios, setUsuarios] = useState([]);
+     const [editarId, setEditarId] = useState(null);
+     const [editarUsuario, setEditarUsuario] = useState({});
+     const [imagem, setImagem] = useState('');
+     const [novoUsuario, setNovoUsuario] = useState({
+        id:'',
         nome: '',
         email: '',
         telefone: '',
         foto: ''
         });
 
-
         useEffect(() => {
-        fetchUsers();
+        BuscarUsuarios();
         }, []);
 
 
-        //Buscar lista de usuarios
-        const fetchUsers = async () => {
-        try {
-           const response = await fetch('http://localhost:8000/usuarios');
-           const data = await response.json();
-            setUsers(data);
+    //Busca a lista de usuarios 
+    const BuscarUsuarios = async () => {
+    try {
+        const resposta = await fetch('http://localhost:8000/usuarios');
+        const dados = await resposta.json();
+        setUsuarios(dados);
         } catch (error) {
-            console.error('Erro ao buscar usuário:', error);
+        console.error('Erro ao buscar usuário:', error);
         }
-        };
-            
-        /* useEffect(() => {
-            fetch('http://localhost:8000/usuarios')
-            .then(response => response.json())
-            .then(data => setUsers(data));
-        }, []);
-        */
+    };
 
 
-    const addUser = async () => {
+    //Adiciona o usuario
+    const AdicionaUsuario = async () => {
         try {
-            const response = await fetch('http://localhost:8000/usuarios', {
+            const resposta = await fetch('http://localhost:8000/usuarios', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(newUser)
+                body: JSON.stringify(novoUsuario)
             });
-            const data = await response.json();
-            setUsers([...users, data]);
-            setNewUser({id:'', nome: '', email: '', telefone: '', foto: '' });
+            const dados = await resposta.json();
+            setUsuarios([...usuarios, dados]);
+            setNovoUsuario({id:'', nome: '', email: '', telefone: '', foto: '' });
             } catch (error) {
             console.log(error);
             }
     };
 
 
-    const handleEditUser = (userId) => {
-        setEditingUserId(userId);
-        const userToEdit = users.find((user) => user.id === userId);
-        setEditedUser(userToEdit);
+    //Editar usuario
+    const EditarUser = (userId) => {
+        setEditarId(userId);
+        const UsuarioEditado = usuarios.find((user) => user.id === userId);
+        setEditarUsuario(UsuarioEditado);
     };
-
-    const handleSaveUser = async () => {
+    
+    //Salva edição
+    const SalvarEdição = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/usuarios/${editedUser.id}`, {
+            const resposta = await fetch(`http://localhost:8000/usuarios/${editarUsuario.id}`, {
                 method: 'PUT',
                 headers: {
                 'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(editedUser),
+                body: JSON.stringify(editarUsuario),
             });
 
-            if (response.ok) {
+            if (resposta.ok) {
                 alert('Usuário salvo com sucesso!');
                 console.log('Usuário salvo com sucesso!');
-                setEditingUserId(null);
-                setEditedUser({});
-                fetchUsers(); // Atualiza a lista de usuários após salvar
+                setEditarId(null);
+                setEditarUsuario({});
+
+                BuscarUsuarios(); // Atualiza a lista de usuários após salvar
+
             } else {
-                console.log('Erro ao salvar usuário:', response.statusText);
+                console.log('Erro ao salvar usuário:', resposta.statusText);
             }
             } catch (error) {
             console.log('Erro ao salvar usuário:', error);
             }
-        };
+    };
 
-    const handleInputChange = (event) => {
+    // Altera o input para fazer a edição
+    const MudarInput = (event) => {
         const { name, value } = event.target;
-        setEditedUser((prevUser) => ({ ...prevUser, [name]: value }));
+        setEditarUsuario((prevUser) => ({ ...prevUser, [name]: value }));
     };
 
 
 
-    const deleteUser = async (id) => {
+    //Deleta o usuario
+    const DeletarUsuario = async (id) => {
         try {
             // Fazer a requisição para excluir o usuário
         await fetch(`http://localhost:8000/usuarios/${id}`, {
         method: 'DELETE',
         });
         
-        //excluir o usuário, atualizar a lista de usuários
-        setUsers(users.filter(user => user.id !== id));
+        //excluir o usuário, atualiza a lista de usuários
+        setUsuarios(usuarios.filter(user => user.id !== id));
         } catch (error) {
         console.error(`Erro eu excluir usuário com ${id}:`, error);
         }
     };
 
 
+    //Altera foto
+    const MudarFoto = (event) => {
+        const foto = event.target.files[0];
+        const LerFoto = new FileReader();
+    
+        LerFoto.onload = () => {
+            setImagem(LerFoto.result);
+        };
+    
+        if (foto) {
+            LerFoto.readAsDataURL(foto);
+        }
+      };
+
+
+
     return (
         <>
         <h1>USUÁRIOS</h1>
-        <button onClick={addUser}className="btn1">CADASTRAR</button>
+        <button onClick={AdicionaUsuario}className="btn1">CADASTRAR</button>
 
         <table className="table">
             <thead>
@@ -122,61 +139,64 @@ export default function TabelaUsuarios(){
                     <th>Email</th>
                     <th>Telefone</th>
                     <th>Foto</th>
-                    <th>Data-Criação</th>
+                    <th>dados-Criação</th>
                     <th>Ações</th>
                 </tr>
             </thead>
 
             <tbody>
-                {users.map((user) => (
+                {usuarios.map((user) => (
                     <tr key={user.id}>
                     <td>
-                        {editingUserId === user.id ? (
+                        {editarId === user.id ? (
                         <input
                             type="text"
                             name="nome"
-                            value={editedUser.nome || ''}
-                            onChange={handleInputChange}
+                            value={editarUsuario.nome || ''}
+                            onChange={MudarInput}
                         />
                         ) : (
                         user.nome
                         )}
                     </td>
                     <td>
-                        {editingUserId === user.id ? (
+                        {editarId === user.id ? (
                         <input
                             type="email"
                             name="email"
-                            value={editedUser.email || ''}
-                            onChange={handleInputChange}
+                            value={editarUsuario.email || ''}
+                            onChange={MudarInput}
                         />
                         ) : (
                         user.email
                         )}
                     </td>
                     <td>
-                        {editingUserId === user.id ? (
+                        {editarId === user.id ? (
                         <input
                             type="tel"
                             name="telefone"
-                            value={editedUser.telefone || ''}
-                            onChange={handleInputChange}
+                            value={editarUsuario.telefone || ''}
+                            onChange={MudarInput}
                         />
                         ) : (
                         user.telefone
                         )}
                     </td>
                     <td>
-                        <img src={user.foto} alt={user.nome}  style={{ width: '50px', height: '50px' }}/>
+                    <label className="picture">
+                        {imagem && <img className="fotoUsuario" src={imagem} alt={user.nome}/>}
+                        <input className="inputFoto" type="file" accept="image/*" onChange={MudarFoto}/>
+                    </label>
                     </td>
                         <td>
-                            {editingUserId === user.id ? (
-                            <button className="btn3" onClick={handleSaveUser}>Salvar</button>
+                            {editarId === user.id ? (
+                            <button className="btn3" onClick={SalvarEdição}>Salvar</button>
                             ) : (
-                            <button className="btn2" onClick={() => handleEditUser(user.id)}>Editar</button>
+                            <button className="btn2" onClick={() => EditarUser(user.id)}>Editar</button>
                             )}
 
-                            <button className="btn4" onClick={() => deleteUser(user.id)}>Excluir</button>
+                            <button className="btn4" onClick={() => DeletarUsuario(user.id)}>Excluir</button>
                         </td>
                     </tr>
                     ))}

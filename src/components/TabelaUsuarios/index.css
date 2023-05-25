@@ -68,3 +68,29 @@ body {
       cursor: pointer;
       margin-right: 5px;
     }
+
+
+
+
+   .picture, .fotoUsuario {
+      width: 5rem;
+      height: 5rem;
+      color:white;
+      background-color: rgb(175, 175, 175);
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background .3s;
+      
+    }
+    
+    .picture:hover {
+      background-color: rgb(114, 114, 114); 
+      border: 2px solid rgb(85, 84, 84); ;
+    }
+    
+    .inputFoto {
+      display: none;
+    }
