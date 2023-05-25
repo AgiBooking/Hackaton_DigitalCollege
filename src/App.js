@@ -7,6 +7,7 @@ import Salas from './pages/Salas';
 import Usuarios from './pages/Usuarios';
 import Login from './pages/Login';
 import Menu from './components/Menu'
+// import Cards from './components/Cards';
 
 const authRoutes = [
   {
@@ -33,8 +34,6 @@ const ResponsivePage = ({element}) => (
     {element}
   </ResponsiveDrawer>
 )
-
-import Cards from './components/Cards';
 
 function App() {
   return (
