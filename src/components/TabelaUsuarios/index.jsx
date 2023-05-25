@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
+import CriarUsuario from '../../components/CriarUsuario';
+import Modal from '@mui/material/Modal';
 
 
 export default function TabelaUsuarios(){
@@ -8,14 +10,7 @@ export default function TabelaUsuarios(){
      const [editarId, setEditarId] = useState(null);
      const [editarUsuario, setEditarUsuario] = useState({});
      const [imagem, setImagem] = useState('https://png.pngtree.com/element_origin_min_pic/00/00/06/12575cb97a22f0f.jpg');
-     const [novoUsuario, setNovoUsuario] = useState({
-        id:'',
-        nome: '',
-        email: '',
-        telefone: '',
-        foto:'',
-        datac: ''
-        });
+     
 
         useEffect(() => {
         BuscarUsuarios();
@@ -36,6 +31,7 @@ export default function TabelaUsuarios(){
 
 
     //Adiciona o usuário
+<<<<<<< HEAD
     const AdicionaUsuario = async () => {
         try {
             const resposta = await fetch('http://localhost:8000/usuarios', {
@@ -54,6 +50,9 @@ export default function TabelaUsuarios(){
     };
 
 
+=======
+   
+>>>>>>> 309185fda82188ac1ee57dce5ee0135005a200ef
     //Editar usuario
     const EditarUser = (userId) => {
         setEditarId(userId);
@@ -126,9 +125,18 @@ export default function TabelaUsuarios(){
         }
       };
 
+      const [open, setOpen]= useState(false);
 
+      const handleClose = () => {
+          setOpen(false)
+      };
+  
+      const handleOpen = () => {
+          setOpen(true)
+      };
 
     return (
+<<<<<<< HEAD
         <>
         <div className="box-table">
             <div className="box-header">
@@ -136,6 +144,22 @@ export default function TabelaUsuarios(){
                 <button onClick={AdicionaUsuario} className="btn1">CADASTRAR</button>
             </div>
         </div>
+=======
+        
+        <div className="box-table">
+        <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description">
+            <CriarUsuario setUsuarios={setUsuarios} usuarios={usuarios}/> 
+        </Modal>
+        <div className="box-header">
+            <h1>USUÁRIOS</h1>
+            <button onClick={handleOpen} className="btn1">Criar usuário</button>
+        </div>
+
+>>>>>>> 309185fda82188ac1ee57dce5ee0135005a200ef
         <table className="table">
             <thead>
                <tr>
@@ -218,6 +242,6 @@ export default function TabelaUsuarios(){
                     ))}
                 </tbody>
             </table>
-        </>
+        </div>
     );
 };

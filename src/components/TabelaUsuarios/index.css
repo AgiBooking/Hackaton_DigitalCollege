@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
     margin: 0;
     padding: 0;
     font-family: "Poppins", Arial, sans-serif;
@@ -61,49 +62,103 @@ body {
       cursor: pointer;
       margin-right: 5px;
     }
+=======
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+}
+>>>>>>> 309185fda82188ac1ee57dce5ee0135005a200ef
 
-    .btn3 {
-      background-color: #83d48e;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 10px;
-      cursor: pointer;
-      margin-right: 5px;
-    }
+h1 {
+  text-align: left;
+  color: #264653;
+}
 
-    .btn4 {
-      background-color: #f05558;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 10px;
-      cursor: pointer;
-      margin-right: 5px;
-    }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
+th, td {
+  padding: 10px;
+  text-align: center;
+  color: #264653;
+}
 
+th {
+  background-image: linear-gradient(#f88040, #f7cc22, #eddea4);
+  color: #264653;
+}
 
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
 
-   .picture, .fotoUsuario {
-      width: 5rem;
-      height: 5rem;
-      color:white;
-      background-color: rgb(175, 175, 175);
-      border-radius: 4px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: background .3s;
-      
-    }
-    
-    .picture:hover {
-      background-color: rgb(114, 114, 114); 
-      border: 2px solid rgb(85, 84, 84); ;
-    }
-    
-    .inputFoto {
-      display: none;
-    }
+.btn1 {
+  background-color: #1c75BC;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1.87rem;
+}
+
+.btn2 {
+  background-color: #fab507;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btn3 {
+  background-color: #83d48e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btn4 {
+  background-color: #f05558;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.picture, .fotoUsuario {
+  width: 5rem;
+  height: 5rem;
+  color:white;
+  background-color: rgb(175, 175, 175);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background .3s;
+  
+}
+
+.picture:hover {
+  background-color: rgb(114, 114, 114); 
+  border: 2px solid rgb(85, 84, 84); ;
+}
+
+.inputFoto {
+  display: none;
+}
