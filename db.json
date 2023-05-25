@@ -56,11 +56,12 @@
       "dtHoraFinal": "17:00",
       "sala": "Maia"
     },
-    {"id": 1,
-    "nomeEvento": "Debora",
-    "dtHoraInicial": "15:00",
-    "dtHoraFinal": "17:00",
-    "sala": "Maia"
+    {
+      "id": 1,
+      "nomeEvento": "Debora",
+      "dtHoraInicial": "15:00",
+      "dtHoraFinal": "17:00",
+      "sala": "Maia"
     },
     {
       "id": 1,

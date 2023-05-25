@@ -3,6 +3,19 @@ body {
     padding: 0;
     font-family: "Poppins", Arial, sans-serif;
   }
+
+  .box-table {
+    margin-left: 1.87rem;
+    margin-right: 1.87rem;
+    margin-top: 1.87rem;
+  }
+  
+  .box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1.87rem;
+  }
   
   h1 {
     text-align: left;
