@@ -38,7 +38,6 @@ const ResponsivePage = ({element}) => (
 function App() {
   return (
     <>
-    <Table/>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Login/>} />

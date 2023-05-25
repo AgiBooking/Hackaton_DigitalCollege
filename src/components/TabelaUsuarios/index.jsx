@@ -115,18 +115,19 @@ export default function TabelaUsuarios(){
         <button onClick={addUser}className="btn1">CADASTRAR</button>
 
         <table className="table">
-                <thead>
-                    <tr>
+            <thead>
+               <tr>
                     <th></th>
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Telefone</th>
+                    <th>Foto</th>
                     <th>Data-Criação</th>
                     <th>Ações</th>
-                    </tr>
-                </thead>
+                </tr>
+            </thead>
 
-                <tbody>
+            <tbody>
                 {users.map((user) => (
                     <tr key={user.id}>
                     <td>

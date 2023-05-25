@@ -1,34 +1,12 @@
 {
   "usuarios": [
     {
-      "id": 2,
-      "nome": "Gabriela Queiroz",
-      "email": "gabriela@gmail.com",
-      "telefone": "aaaa",
-      "datac": "24/05/23",
-      "foto": "https://png.pngtree.com/element_origin_min_pic/00/00/06/12575cb97a22f0f.jpg"
-    },
-    {
       "id": 3,
       "nome": "Gabriela Queiroz",
       "email": "gabriela@gmail.com",
-      "telefone": 123456789,
+      "telefone": "debora",
       "datac": "24/05/23",
       "foto": "https://png.pngtree.com/element_origin_min_pic/00/00/06/12575cb97a22f0f.jpg"
-    },
-    {
-      "nome": "",
-      "email": "",
-      "telefone": "",
-      "foto": "",
-      "id": 6
-    },
-    {
-      "id": 9,
-      "nome": "",
-      "email": "",
-      "telefone": "",
-      "foto": ""
     }
   ]
 }
