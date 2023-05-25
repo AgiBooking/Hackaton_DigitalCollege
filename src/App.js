@@ -29,11 +29,9 @@ const authRoutes = [
 ]
 
 const ResponsivePage = ({element}) => (
-  <>
-    <ResponsiveDrawer />
-    <Menu/>
+  <ResponsiveDrawer profileMenu={<Menu />}>
     {element}
-  </>
+  </ResponsiveDrawer>
 )
 
 function App() {
